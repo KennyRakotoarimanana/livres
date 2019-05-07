@@ -1,22 +1,65 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block body %}
+    <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+        <div class="row flex-grow">
+          <div class="col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="auth-form-transparent text-left p-3">
+              <div class="brand-logo">
+                <img src="{{ asset('BackOfficeAssets/images/logo.svg') }}" alt="logo">
+              </div>
+                <h4>Inscription </h4>
+                {{ form_start(form,{'attr': {'class':'pt-3'}}) }}
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                                <span class="input-group-text bg-transparent border-right-0">
+                                    <i class="mdi mdi-account-outline text-primary"></i>
+                                </span>
+                            </div>
+                            {{ form_row(form.login,{'attr' : {'class':'form-control form-control-lg border-left-0','placeholder' : 'Nom d\'utilisateur' , 'id' : 'exampleInputEmail'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                                <span class="input-group-text bg-transparent border-right-0">
+                                    <i class="mdi mdi-lock-outline text-primary"></i>
+                                </span>
+                            </div>
+                            {{ form_row(form.motDePasse,{'attr' : {'class':'form-control form-control-lg border-left-0','placeholder' : 'Mot de passe' , 'id' : 'exampleInputPassword'}}) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                                <span class="input-group-text bg-transparent border-right-0">
+                                    <i class="mdi mdi-lock-outline text-primary"></i>
+                                </span>
+                            </div>
+                            {{ form_row(form.confirmer_motDePasse,{'attr' : {'class':'form-control form-control-lg border-left-0','placeholder' : 'Confirmer le mot de passe' , 'id' : 'exampleInputPassword'}}) }}
+                        </div>
+                    </div>
+                    
+                <div class="my-3">
+                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">S'inscrire</button>
+                </div>
+            {{ form_end(form) }}
+            </div>
+          </div>
+          <div class="col-lg-6 login-half-bg d-flex flex-row">
+            <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2018  All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
 
-    {{ form_start(form) }}
-
-        {{ form_row(form.login,{'label' : 'Nom d\'utilisateur' , 'attr' : {'placeholder' : 'Nom d\'utilisateur'}}) }}
-        {{ form_row(form.motDePasse) }}
-        {{ form_row(form.confirmer_motDePasse) }}
-        <button type="submit" class="">Inscription</button>
     
-    {{ form_end(form) }}
 
 
 {% endblock %}
-
-{% 
-                        for image in images %}
-                            <div class="active item carousel-item" data-slide-number="0">
-                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ image.getNomImage) }}" class="img-fluid">
-                            </div>
-                        {% endfor %}

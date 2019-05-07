@@ -3,14 +3,20 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Administrateur
  *
  * @ORM\Table(name="administrateur")
  * @ORM\Entity
+ * @UniqueEntity(
+ *      fields = {"login"},
+ *      message = "Le login que vous avez indiqué est déja utilisé!"
+ * )
  */
-class Administrateur
+class Administrateur implements UserInterface
 {
     /**
      * @var int
@@ -33,8 +39,14 @@ class Administrateur
      * @var string
      *
      * @ORM\Column(name="mot_de_passe", type="string", length=64, nullable=false)
+     * @Assert\Length(min="8", minMessage="Doit contenir au moins 8 caratères")
      */
     private $motDePasse;
+    
+    /**
+     * @Assert\EqualTo(propertyPath="motDePasse", message="Mots de passes non identiques")
+     */
+    public $confirmer_motDePasse;
 
     public function getIdAdministrateur(): ?int
     {
@@ -65,5 +77,16 @@ class Administrateur
         return $this;
     }
 
+    public function getUsername(){
+        return $this->login;
+    }
+    public function getPassword(){
+        return $this->motDePasse;
+    }
+    public function getRoles(){
+        return['ROLE_USER'];
+    }
+    public function getSalt(){}
+    public function eraseCredentials(){}
 
 }

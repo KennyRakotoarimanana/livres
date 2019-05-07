@@ -20,8 +20,8 @@ class MainController extends AbstractController
         $categories = $categorieRepository->findAll();
         return $this->render('FrontOffice/accueil.html.twig',[
             'categories'=>$categories
-        ],
-    );
+            ],
+        );
     /*$blog1 = new Blog();
     $blog2 = new Blog();
     $blog1->setTitle("Title1");

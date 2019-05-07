@@ -1,21 +1,31 @@
-<!DOCTYPE html>
+{# templates/admin/base.html.twig #}
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Test Application{% endblock %}</title>
-    </head>
-    <body>
-        <div id="sidebar">
-            {% block sidebar %}
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                </ul>
-            {% endblock %}
-        </div>
+        <title>{% block title %} Library|Administrateur {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <div id="content">
-            {% block body %}{% endblock %}
-        </div>
+        {% block stylesheets %}
+            <link href="{{ asset('BackOfficeAssets/vendors/mdi/css/materialdesignicons.min.css') }}" rel="stylesheet"/>
+            <link href="{{ asset('BackOfficeAssets/vendors/base/vendor.bundle.base.css')}}" rel="stylesheet"/>
+            <link href="{{ asset('BackOfficeAssets/css/style.css')}}" rel="stylesheet"/>
+            <link href="{{ asset('BackOfficeAssets/images/favicon.png')}}" rel="shortcut icon"/>
+        {% endblock %}
+    </head>
+        
+        {% block body %}
+       
+        {% endblock %}
+
+        {% block javascript %}
+             <script src="{{ asset('BackOfficeAssets/vendors/base/vendor.bundle.base.js') }}"></script>
+        <!-- endinject -->
+        <!-- inject:js -->
+        <script src="{{ asset('BackOfficeAssets/js/off-canvas.js') }}"></script>
+        <script src="{{ asset('BackOfficeAssets/js/hoverable-collapse.js') }}"></script>
+        <script src=".{{ asset('BackOfficeAssets/js/template.js') }}"></script>
+        {% endblock %}
+
+        
     </body>
 </html>
