@@ -1,0 +1,25 @@
+{# templates/FrontOffice/accueil.html.twig #}
+
+{% extends 'FrontOffice/base.html.twig' %}
+
+{% block body %}
+    <section class="slider">
+        <div class="container">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+                    {% for i in 1..4 %}
+                         <div class="item">
+                            <div class="slide">
+                                <img src="{{ asset('images/libraryslide'~ i ~'.jpg') }}" alt="libraryslide">
+                                <div class="content">
+                                    <div class="title">
+                                        <h3>welcome to your <strong>library</strong></h3>
+                                        <h5>Discover the best books online with us</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

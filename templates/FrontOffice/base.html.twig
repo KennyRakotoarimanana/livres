@@ -1,0 +1,128 @@
+{# templates/FrontOffice/base.html.twig #}
+<html>
+    <head>
+        {# ... #}
+        <meta charset="UTF-8">
+        <title>{% block title %} Library {% endblock %}</title>
+
+        {% block stylesheets %}
+            <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+            {# <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> #}
+            <link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+         {% block header %}
+            <div class="main-menu">
+                <div class="container">
+                    {% block navbar %}
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html"><strong>LIBRARY</strong></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="navbar-item active">
+                                        <a href="index.html" class="nav-link">Home</a>
+                                    </li>
+                                    <li class="navbar-item">
+                                        <a href="about.html" class="nav-link">About</a>
+                                    </li>
+                                </ul>
+                                <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
+                                    <span class="fa fa-search"></span>
+                                </form>
+                            </div>
+                        </nav>
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="container">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        {% for categorie in categories %}
+                            <div class="col-md-1"><a href="/categorie/{{categorie.getNomCategorie|lower}}-{{categorie.getIdCategorie}}.html" class="web-url"><h5><strong>{{categorie.getNomCategorie}}</strong></h5></a></div>
+                        {% endfor %}    
+                    </div>
+                </div>
+            </div>
+            </div>
+          {% endblock %}
+        <header>
+        
+        {% block body %}
+       
+        {% endblock %}
+
+        <footer>
+          {% block footer %}
+            <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="address">
+                        <h4>Our Address</h4>
+                        <h6>The library, 4th Store
+                        Beside that building, USA</h6>
+                        <h6>books@library.com</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="timing">
+                        <h4>Timing</h4>
+                        <h6>Mon - Fri: 7am - 10pm</h6>
+                        <h6>​​Saturday: 8am - 10pm</h6>
+                        <h6>​Sunday: 8am - 11pm</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="navigation">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="products.html">Products</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+              
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>RAKOTOARIMANANA Andrianavalona Lalasoa Kenny - ETU689</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="share align-middle">
+                            <span class="fb"><i class="fa fa-facebook-official"></i></span>
+                            <span class="instagram"><i class="fa fa-instagram"></i></span>
+                            <span class="twitter"><i class="fa fa-twitter"></i></span>
+                            <span class="pinterest"><i class="fa fa-pinterest"></i></span>
+                            <span class="google"><i class="fa fa-google-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          {% endblock %}
+        </footer>
+
+
+
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
+            <script src="{{ asset('js/custom.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

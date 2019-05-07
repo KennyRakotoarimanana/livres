@@ -1,0 +1,22 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+
+        {{ form_row(form.login,{'label' : 'Nom d\'utilisateur' , 'attr' : {'placeholder' : 'Nom d\'utilisateur'}}) }}
+        {{ form_row(form.motDePasse) }}
+        {{ form_row(form.confirmer_motDePasse) }}
+        <button type="submit" class="">Inscription</button>
+    
+    {{ form_end(form) }}
+
+
+{% endblock %}
+
+{% 
+                        for image in images %}
+                            <div class="active item carousel-item" data-slide-number="0">
+                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ image.getNomImage) }}" class="img-fluid">
+                            </div>
+                        {% endfor %}

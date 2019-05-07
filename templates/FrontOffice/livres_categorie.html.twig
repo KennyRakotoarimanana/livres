@@ -1,0 +1,29 @@
+{# templates/FrontOffice/livres_categorie.html.twig #}
+
+{% extends 'FrontOffice/base.html.twig' %}
+
+{% block title %} {{nom_categorie|upper}} {% endblock %}
+
+{% block body %}
+     <section class="recent-book-sec">
+        <div class="container">
+            <div class="title">
+                <h1><strong>{{nom_categorie|upper}}</strong></h1>
+                <hr>
+            </div>
+            <div class="row">
+                {% for livre in livres %}
+                <div class="col-lg-2 col-md-3 col-sm-4"> 
+                    <div class="item"> 
+                        <a href="/{{ nom_categorie }}/{{ nom_categorie }}-{{livre.getIdLivre}}-{{livre.getIdCategorie.getIdCategorie}}.html">
+                            <img src="{{ asset('images/'~ livre.getTitre  ~'/'~  livre.getTitre  ~'1.jpg') }}" alt="Livre : {{livre.getTitre}}">
+                            <h3> {{livre.getTitre}} </h3>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

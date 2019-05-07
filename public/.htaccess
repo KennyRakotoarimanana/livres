@@ -1,0 +1,4 @@
+Options+FollowSymLinks
+RewriteEngine on
+RewriteRule ^/categorie/?.*-([_a-z0-9]*).html$
+pages/modules.php?id=$1&idcat=$2 [L]

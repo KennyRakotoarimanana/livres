@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Connexion</h1>
+    {% if error is defined  %}
+        <p>{{ error }}</p>
+    {% endif  %}
+    <form action="{{ path('authentication') }}" method="POST" >
+        <div class="form-group">
+            <input placeholder="Votre login" type="text" required name="login" >
+        </div>
+        <div class="form-group">
+            <input placeholder="Votre mot de passe" type="password" required name="mdp" >
+        </div>
+        <div class="form-group">
+            <button type="submit">Connexion</button>
+        </div>
+     
+    </form>
+{% endblock %}
