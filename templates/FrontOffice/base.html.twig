@@ -44,15 +44,15 @@
                 </div>
             </div>
             <div class="container">
-            <div class="header-top">
-                <div class="container">
-                    <div class="row">
-                        {% for categorie in categories %}
-                            <div class="col-md-1"><a href="/categorie/{{categorie.getNomCategorie|lower}}-{{categorie.getIdCategorie}}.html" class="web-url"><h5><strong>{{categorie.getNomCategorie}}</strong></h5></a></div>
-                        {% endfor %}    
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row">
+                            {% for categorie in categories %}
+                                <div class="col-md-1"><a href="/categorie/{{categorie.getNomCategorie|lower}}-{{categorie.getIdCategorie}}.html" class="web-url"><h5><strong>{{categorie.getNomCategorie}}</strong></h5></a></div>
+                            {% endfor %}    
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
           {% endblock %}
         <header>
