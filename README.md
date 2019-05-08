@@ -1,5 +1,5 @@
-# livres
-Site web contenant le synopsis de livres, selon leur catégorie.
+# Livres à lire
+Livres à lire est un site web contenant le synopsis de livres, selon leur catégorie.
 Front-office : Affiche les livres par catégories, fiche livre
 Back-office : Ajouter, modifier, supprimer des categories
               Ajouter des livres
