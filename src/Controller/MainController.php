@@ -19,10 +19,11 @@ class MainController extends AbstractController
         $categorieRepository = $this->getDoctrine()->getRepository(Categorie::class);
         $categories = $categorieRepository->findAll();
         $livreRepository = $this->getDoctrine()->getRepository(Livre::class);
-        //$livres = $livreRepository->findAll(array $orderBy=);
+        $livres = $livreRepository->findBy(array(),array(),4,null);
 
         return $this->render('FrontOffice/accueil.html.twig',[
-            'categories'=>$categories
+            'categories'=>$categories,
+            'livres'=>$livres
             ],
         );
     }

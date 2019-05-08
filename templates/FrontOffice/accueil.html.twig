@@ -9,7 +9,7 @@
                     {% for i in 1..4 %}
                          <div class="item">
                             <div class="slide">
-                                <img src="{{ asset('images/libraryslide'~ i ~'.jpg') }}" alt="libraryslide">
+                                <img src="{{ asset('images/libraryslide'~ i ~'.jpg') }}" alt="Livres à lire: couverture">
                                 <div class="content">
                                     <div class="title">
                                         <h1>Bienvenue sur <strong>Livres à lire</strong></h1>
@@ -22,18 +22,18 @@
             </div>
         </div>
     </section>
-
-    {# <section class="recent-book-sec">
+    
+    <section class="recent-book-sec">
         <div class="container">
             <div class="title">
-                <h1>Les<strong>livres à lire</strong> ajoutés récemment</h1>
+                <h1>Les <strong>livres à lire</strong> ajoutés récemment</h1>
                 <hr>
             </div>
             <div class="row">
                 {% for livre in livres %}
                 <div class="col-lg-2 col-md-3 col-sm-4"> 
                     <div class="item"> 
-                        <a href="/{{ nom_categorie }}/{{ nom_categorie }}-{{livre.getIdLivre}}-{{livre.getIdCategorie.getIdCategorie}}.html">
+                        <a href="/{{ livre.getIdCategorie.getNomCategorie }}/{{ livre.getIdCategorie.getNomCategorie }}-{{livre.getIdLivre}}-{{livre.getIdCategorie.getIdCategorie}}.html">
                             <img src="{{ asset('images/'~ livre.getTitre  ~'/'~  livre.getTitre  ~'1.jpg') }}" alt="Livre : {{livre.getTitre}}">
                             <h3> {{livre.getTitre}} </h3>
                         </a>
@@ -42,5 +42,5 @@
                 {% endfor %}
             </div>
         </div>
-    </section> #}
+    </section>
 {% endblock %}
