@@ -46,5 +46,12 @@ class Categorie
         return $this;
     }
 
+    public function setIdCategorie(int $nomCategorie): self
+    {
+        $this->idCategorie = $nomCategorie;
+
+        return $this;
+    }
+
 
 }

@@ -19,12 +19,12 @@
                             <div class="active item carousel-item" data-slide-number="0">
                                 <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.0.getNomImage) }}" class="img-fluid">
                             </div>
-                            {# <div class="item carousel-item" data-slide-number="1">
-                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.0.getNomImage) }}" class="img-fluid">
+                            <div class="item carousel-item" data-slide-number="1">
+                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.1.getNomImage) }}" class="img-fluid">
                             </div>
                             <div class="item carousel-item" data-slide-number="2">
-                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.0.getNomImage) }}" class="img-fluid">
-                            </div> #}
+                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.2.getNomImage) }}" class="img-fluid">
+                            </div>
                         </div>
                         <!-- main slider carousel nav controls -->
                         <ul class="carousel-indicators list-inline">
@@ -32,23 +32,29 @@
                                 <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#myCarousel">
                                 <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.0.getNomImage) }}" class="img-fluid">
                             </a>
-                            {# </li>
+                            </li>
                             <li class="list-inline-item">
                                 <a id="carousel-selector-1" data-slide-to="1" data-target="#myCarousel">
-                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.0.getNomImage) }}" class="img-fluid">
+                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.1.getNomImage) }}" class="img-fluid">
                             </a>
                             </li>
                             <li class="list-inline-item">
                                 <a id="carousel-selector-2" data-slide-to="2" data-target="#myCarousel">
-                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.0.getNomImage) }}" class="img-fluid">
+                                <img src="{{ asset('images/'~ livre.getTitre ~'/'~ images.2.getNomImage) }}" class="img-fluid">
                             </a>
-                            </li>	 #}
+                            </li>	
                         </ul>
                     </div>
                     <!--/main slider carousel-->
                 </div>
                 <div class="col-md-6 slider-content">
                     <p>{{livre.getResume|raw}}</p>
+                    <ul>
+                        <li>
+                            <span class="name">Auteur</span><span class="clm">:</span>
+                            <span class="price">{{livre.getAuteur}}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

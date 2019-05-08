@@ -12,8 +12,8 @@
                                 <img src="{{ asset('images/libraryslide'~ i ~'.jpg') }}" alt="libraryslide">
                                 <div class="content">
                                     <div class="title">
-                                        <h3>welcome to your <strong>library</strong></h3>
-                                        <h5>Discover the best books online with us</h5>
+                                        <h1>Bienvenue sur <strong>Livres à lire</strong></h1>
+                                        <h2>Découvrez les meilleurs <strong>livres</strong> avec nous</h2>
                                     </div>
                                 </div>
                             </div>
@@ -22,4 +22,25 @@
             </div>
         </div>
     </section>
+
+    {# <section class="recent-book-sec">
+        <div class="container">
+            <div class="title">
+                <h1>Les<strong>livres à lire</strong> ajoutés récemment</h1>
+                <hr>
+            </div>
+            <div class="row">
+                {% for livre in livres %}
+                <div class="col-lg-2 col-md-3 col-sm-4"> 
+                    <div class="item"> 
+                        <a href="/{{ nom_categorie }}/{{ nom_categorie }}-{{livre.getIdLivre}}-{{livre.getIdCategorie.getIdCategorie}}.html">
+                            <img src="{{ asset('images/'~ livre.getTitre  ~'/'~  livre.getTitre  ~'1.jpg') }}" alt="Livre : {{livre.getTitre}}">
+                            <h3> {{livre.getTitre}} </h3>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section> #}
 {% endblock %}

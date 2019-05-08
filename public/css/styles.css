@@ -981,8 +981,7 @@ header .cart {
         .product-sec .slider-content ul li span.price {
           padding-left: 20px;
           font-weight: 600;
-          text-decoration: line-through;
-          width: 100px; }
+          width: 50px; }
         .product-sec .slider-content ul li span.final {
           font-size: 24px;
           text-decoration: none;

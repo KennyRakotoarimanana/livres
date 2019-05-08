@@ -7,6 +7,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 
 
 use App\Entity\Administrateur;
@@ -48,7 +50,7 @@ class SecurityController extends AbstractController
     /**
     *  @Route("/authentication",name="authentication")
     */
-    public function authentication(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder){
+    public function authentication(SessionInterface $session ,Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoder){
         $repository = $this->getDoctrine()->getRepository(Administrateur::class);
         $login = $request->request->get('login');
         $administrateur = new Administrateur();
@@ -64,6 +66,7 @@ class SecurityController extends AbstractController
             ]);
         }
         else{
+            $session->set('login',$login);
             return $this->redirectToRoute('accueil_admin');
         }
     }
@@ -71,5 +74,7 @@ class SecurityController extends AbstractController
     /**
     *  @Route("/deconnexion",name="security_deconnexion")
     */
-    public function deconnexion(){}
+    public function deconnexion(SessionInterface $session){
+        $session->set('login',null);
+    }
 }
